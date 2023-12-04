@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="text-center m-3">Trending movies</h2>
+    {% if movies %}
+        <ul class="containerr">
+            {% for movie in movies %}
+                <li class="card" style="width: 18rem;">
+                    <img class="card-img-top" src={{ movie.primaryImage.url }} alt="img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ movie.titleText.get('text') }}</h5>
+                        
+                        <a href="#" class="btn btn-primary">Watch</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No movies found</p>
+    {% endif %}
+{% endblock %}

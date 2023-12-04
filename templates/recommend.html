@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2 class="text-center m-3">Recommendation Form</h2>
+  <form class="/add_movie" method="post">
+      <div class="form-group">
+        <label for="Title">Movie Title</label>
+        <input type="text" class="form-control" id="Title" placeholder="Enter Movie Title">
+      </div>
+      <div class="form-group">
+        <label for="Genre">Movie Genre</label>
+        <input type="text" class="form-control" id="Genre" placeholder="Enter Movie Genre">
+      </div>
+      <div class="form-group">
+        <label for="Director">Movie Director</label>
+        <input type="text" class="form-control" id="Director" placeholder="Enter Movie Director">
+      </div>
+      <button type="submit" class="btn btn-primary">Recommend</button>
+  </form>
+</div>
+{% endblock %}

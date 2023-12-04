@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="m-3">
+        <h5 class="text-center">MRS welcomes you to an immersive cinematic experience. Here, at the forefront of our site, you embark on a journey into the world of movies.</h5>
+        <h2 class="text-center">Explore, discover, and find your next captivating watch!</h2>
+    </div>
+
+    {% if movies %}
+        <ul class="containerr">
+            {% for movie in movies %}
+                <li class="card" style="width: 18rem;">
+                    <img style="height: 75%" class="card-img-top" src={{ movie.primaryImage.url }} alt="img-thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ movie.titleText.get('text') }}</h5>
+                        <p>{{ movie.primaryImage.caption.get('plainText') }} </p>
+                        <a href="#" class="btn btn-primary">watch</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Fetching from database...</p>
+    {% endif %}
+{% endblock %}
